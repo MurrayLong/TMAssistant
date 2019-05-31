@@ -1,0 +1,396 @@
+{
+  "SaveName": "SnapPointTest",
+  "GameMode": "None",
+  "Date": "4/22/2017 5:41:28 PM",
+  "Table": "Table_Circular",
+  "Sky": "Sky_Tunnel",
+  "Note": "",
+  "Rules": "",
+  "PlayerTurn": "",
+  "LuaScript": "--[[ Lua code. See documentation: http://berserk-games.com/knowledgebase/scripting/ --]]\n\n--[[ The OnLoad function. This is called after everything in the game save finishes loading.\nMost of your script code goes here. --]]\nfunction onload()\n    --[[ print('Onload!') --]]\nend\n\n--[[ The Update function. This is called once per frame. --]]\nfunction update ()\n    --[[ print('Update loop!') --]]\nend",
+  "LuaScriptState": "",
+  "Grid": {
+    "Type": 0,
+    "Lines": false,
+    "Snapping": false,
+    "Offset": false,
+    "BothSnapping": false,
+    "xSize": 0.0,
+    "ySize": 0.0,
+    "PosOffset": {
+      "x": 0.0,
+      "y": 1.0,
+      "z": 0.0
+    }
+  },
+  "Hands": {
+    "Enable": true,
+    "DisableUnused": false,
+    "Hidding": 0,
+    "HandTransforms": [
+      {
+        "Color": "Red",
+        "Transform": {
+          "posX": -15.2383461,
+          "posY": 3.543913,
+          "posZ": -15.4102268,
+          "rotX": 3.26725058E-07,
+          "rotY": 45.0000038,
+          "rotZ": -7.88784E-07,
+          "scaleX": 11.6554279,
+          "scaleY": 9.17449951,
+          "scaleZ": 6.767239
+        }
+      },
+      {
+        "Color": "Yellow",
+        "Transform": {
+          "posX": -15.3520813,
+          "posY": 3.543913,
+          "posZ": 15.1043758,
+          "rotX": -3.94392E-07,
+          "rotY": 135.0,
+          "rotZ": 1.63362529E-07,
+          "scaleX": 11.6554222,
+          "scaleY": 9.17449951,
+          "scaleZ": 6.76723576
+        }
+      },
+      {
+        "Color": "Purple",
+        "Transform": {
+          "posX": 21.5308132,
+          "posY": 3.543913,
+          "posZ": 0.05563879,
+          "rotX": -3.01854584E-07,
+          "rotY": 270.0,
+          "rotZ": -3.01854556E-07,
+          "scaleX": 11.6554155,
+          "scaleY": 9.17449951,
+          "scaleZ": 6.767229
+        }
+      },
+      {
+        "Color": "Blue",
+        "Transform": {
+          "posX": 15.3141708,
+          "posY": 3.543913,
+          "posZ": 15.1422806,
+          "rotX": 1.18317587E-06,
+          "rotY": 225.000015,
+          "rotZ": 4.9008753E-07,
+          "scaleX": 11.6554165,
+          "scaleY": 9.17449951,
+          "scaleZ": 6.767231
+        }
+      },
+      {
+        "Color": "White",
+        "Transform": {
+          "posX": 5.24520874E-06,
+          "posY": 3.543913,
+          "posZ": -21.4752445,
+          "rotX": 0.0,
+          "rotY": 0.0,
+          "rotZ": 0.0,
+          "scaleX": 11.6554127,
+          "scaleY": 9.174501,
+          "scaleZ": 6.76723051
+        }
+      },
+      {
+        "Color": "Green",
+        "Transform": {
+          "posX": -3.33786E-06,
+          "posY": 3.543913,
+          "posZ": 21.29339,
+          "rotX": 1.49410391E-06,
+          "rotY": 180.000015,
+          "rotZ": 6.679165E-14,
+          "scaleX": 11.6554127,
+          "scaleY": 9.17449951,
+          "scaleZ": 6.767229
+        }
+      },
+      {
+        "Color": "Pink",
+        "Transform": {
+          "posX": 15.3141737,
+          "posY": 3.543913,
+          "posZ": -15.0311737,
+          "rotX": -3.26725115E-07,
+          "rotY": 315.000031,
+          "rotZ": -7.8878395E-07,
+          "scaleX": 11.6554108,
+          "scaleY": 9.17449951,
+          "scaleZ": 6.76723
+        }
+      },
+      {
+        "Color": "Orange",
+        "Transform": {
+          "posX": -21.5687122,
+          "posY": 3.543913,
+          "posZ": -0.209711552,
+          "rotX": -9.05563752E-07,
+          "rotY": 90.0,
+          "rotZ": 1.50927281E-06,
+          "scaleX": 11.655427,
+          "scaleY": 9.17449951,
+          "scaleZ": 6.767236
+        }
+      }
+    ]
+  },
+  "DrawImage": "iVBORw0KGgoAAAANSUhEUgAAAWAAAADQCAYAAAA53LuNAAAFFElEQVR4Ae3QgQAAAADDoPlTH+SFUGHAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgwYMGDAgAEDBgy8DQx5DAABHyNK3wAAAABJRU5ErkJggg==",
+  "VectorLines": [],
+  "ObjectStates": [
+    {
+      "Name": "BlockSquare",
+      "Transform": {
+        "posX": -7.831204,
+        "posY": 1.45999992,
+        "posZ": -10.6285715,
+        "rotX": -7.154065E-05,
+        "rotY": -5.82610555E-05,
+        "rotZ": 6.186785E-05,
+        "scaleX": 1.0,
+        "scaleY": 1.0,
+        "scaleZ": 1.0
+      },
+      "Nickname": "Snapped 2",
+      "Description": "",
+      "ColorDiffuse": {
+        "r": 0.9264706,
+        "g": 0.0,
+        "b": 0.0
+      },
+      "Locked": false,
+      "Grid": true,
+      "Snap": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "GUID": "05c3ef"
+    },
+    {
+      "Name": "BlockSquare",
+      "Transform": {
+        "posX": -4.31129551,
+        "posY": 1.46,
+        "posZ": -11.6184845,
+        "rotX": 3.94013659E-05,
+        "rotY": 2.615179E-05,
+        "rotZ": 8.427544E-06,
+        "scaleX": 1.0,
+        "scaleY": 1.0,
+        "scaleZ": 1.0
+      },
+      "Nickname": "Snapped 1",
+      "Description": "",
+      "ColorDiffuse": {
+        "r": 0.9264706,
+        "g": 0.0,
+        "b": 0.0
+      },
+      "Locked": false,
+      "Grid": true,
+      "Snap": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "GUID": "a38b65"
+    },
+    {
+      "Name": "BlockSquare",
+      "Transform": {
+        "posX": -6.81249332,
+        "posY": 1.46000051,
+        "posZ": -15.0235415,
+        "rotX": 4.30962064E-05,
+        "rotY": -2.86679915E-05,
+        "rotZ": 1.00738343E-05,
+        "scaleX": 1.0,
+        "scaleY": 1.0,
+        "scaleZ": 1.0
+      },
+      "Nickname": "NotSnapped",
+      "Description": "",
+      "ColorDiffuse": {
+        "r": 0.9264706,
+        "g": 0.0,
+        "b": 0.0
+      },
+      "Locked": false,
+      "Grid": true,
+      "Snap": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "GUID": "fd6073"
+    }
+  ],
+  "SnapPoints": [
+    {
+      "Position": {
+        "x": -7.83120346,
+        "y": 0.9611347,
+        "z": -10.6285725
+      }
+    },
+    {
+      "Position": {
+        "x": -4.31129551,
+        "y": 0.9611347,
+        "z": -11.6184855
+      }
+    },
+    {
+      "Position": {
+        "x": -0.832551837,
+        "y": 0.9611347,
+        "z": -12.6497593
+      }
+    }
+  ],
+  "TabStates": {
+    "0": {
+      "title": "Rules",
+      "body": "",
+      "color": "Grey",
+      "visibleColor": {
+        "r": 0.5,
+        "g": 0.5,
+        "b": 0.5
+      },
+      "id": 0
+    },
+    "1": {
+      "title": "White",
+      "body": "",
+      "color": "White",
+      "visibleColor": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0
+      },
+      "id": 1
+    },
+    "2": {
+      "title": "Brown",
+      "body": "",
+      "color": "Brown",
+      "visibleColor": {
+        "r": 0.443,
+        "g": 0.231,
+        "b": 0.09
+      },
+      "id": 2
+    },
+    "3": {
+      "title": "Red",
+      "body": "",
+      "color": "Red",
+      "visibleColor": {
+        "r": 0.856,
+        "g": 0.1,
+        "b": 0.094
+      },
+      "id": 3
+    },
+    "4": {
+      "title": "Orange",
+      "body": "",
+      "color": "Orange",
+      "visibleColor": {
+        "r": 0.956,
+        "g": 0.392,
+        "b": 0.113
+      },
+      "id": 4
+    },
+    "5": {
+      "title": "Yellow",
+      "body": "",
+      "color": "Yellow",
+      "visibleColor": {
+        "r": 0.905,
+        "g": 0.898,
+        "b": 0.172
+      },
+      "id": 5
+    },
+    "6": {
+      "title": "Green",
+      "body": "",
+      "color": "Green",
+      "visibleColor": {
+        "r": 0.192,
+        "g": 0.701,
+        "b": 0.168
+      },
+      "id": 6
+    },
+    "7": {
+      "title": "Blue",
+      "body": "",
+      "color": "Blue",
+      "visibleColor": {
+        "r": 0.118,
+        "g": 0.53,
+        "b": 1.0
+      },
+      "id": 7
+    },
+    "8": {
+      "title": "Teal",
+      "body": "",
+      "color": "Teal",
+      "visibleColor": {
+        "r": 0.129,
+        "g": 0.694,
+        "b": 0.607
+      },
+      "id": 8
+    },
+    "9": {
+      "title": "Purple",
+      "body": "",
+      "color": "Purple",
+      "visibleColor": {
+        "r": 0.627,
+        "g": 0.125,
+        "b": 0.941
+      },
+      "id": 9
+    },
+    "10": {
+      "title": "Pink",
+      "body": "",
+      "color": "Pink",
+      "visibleColor": {
+        "r": 0.96,
+        "g": 0.439,
+        "b": 0.807
+      },
+      "id": 10
+    },
+    "11": {
+      "title": "Black",
+      "body": "",
+      "color": "Black",
+      "visibleColor": {
+        "r": 0.25,
+        "g": 0.25,
+        "b": 0.25
+      },
+      "id": 11
+    }
+  }
+}

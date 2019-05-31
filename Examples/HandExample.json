@@ -1,0 +1,504 @@
+{
+  "SaveName": "HandTest",
+  "GameMode": "HandTest",
+  "Date": "4/11/2017 4:42:41 PM",
+  "Table": "Table_Octagon",
+  "Sky": "Sky_Downtown",
+  "Note": "",
+  "Rules": "",
+  "PlayerTurn": "",
+  "LuaScript": "--[[ Lua code. See documentation: http://berserk-games.com/knowledgebase/scripting/ --]]\n\n--[[ The OnLoad function. This is called after everything in the game save finishes loading.\nMost of your script code goes here. --]]\nfunction onload()\n    --[[ print('Onload!') --]]\nend\n\n--[[ The Update function. This is called once per frame. --]]\nfunction update ()\n    --[[ print('Update loop!') --]]\nend",
+  "LuaScriptState": "",
+  "Grid": {
+    "Type": 0,
+    "Lines": false,
+    "Snapping": false,
+    "Offset": false,
+    "BothSnapping": false,
+    "xSize": 0.5,
+    "ySize": 0.5,
+    "PosOffset": {
+      "x": 0.0,
+      "y": 1.0,
+      "z": 0.0
+    }
+  },
+  "Hands": {
+    "Enable": true,
+    "DisableUnused": false,
+    "Hidding": 0,
+    "HandTransforms": [
+      {
+        "Color": "Red",
+        "Transform": {
+          "posX": 0,
+          "posY": 0,
+          "posZ": 0,
+          "rotX": 0.0,
+          "rotY": 44.9999962,
+          "rotZ": 0.0,
+          "scaleX": 9.413998,
+          "scaleY": 8.961139,
+          "scaleZ": 5.46584654
+        }
+      }
+    ]
+  },
+  "VectorLines": [],
+  "ObjectStates": [
+    {
+      "Name": "Card",
+      "Transform": {
+        "posX": -2.95366335,
+        "posY": 1.00005722,
+        "posZ": 2.9536624,
+        "rotX": 0.0,
+        "rotY": 225.000046,
+        "rotZ": 0.0,
+        "scaleX": 1.0,
+        "scaleY": 1.0,
+        "scaleZ": 1.0
+      },
+      "Nickname": "InHand",
+      "Description": "",
+      "ColorDiffuse": {
+        "r": 0.713235259,
+        "g": 0.713235259,
+        "b": 0.713235259
+      },
+      "Locked": false,
+      "Grid": true,
+      "Snap": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "CardID": 52,
+      "SidewaysCard": false,
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "GUID": "62bc79"
+    },
+    {
+      "Name": "Card",
+      "Transform": {
+        "posX": -3.38741732,
+        "posY": 1.03171325,
+        "posZ": -2.83596087,
+        "rotX": -1.64329285E-05,
+        "rotY": 225.0135,
+        "rotZ": -3.601262E-06,
+        "scaleX": 1.0,
+        "scaleY": 1.0,
+        "scaleZ": 1.0
+      },
+      "Nickname": "notInHand",
+      "Description": "",
+      "ColorDiffuse": {
+        "r": 0.713235259,
+        "g": 0.713235259,
+        "b": 0.713235259
+      },
+      "Locked": false,
+      "Grid": true,
+      "Snap": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "CardID": 52,
+      "SidewaysCard": false,
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "GUID": "f10a99"
+    },
+    {
+      "Name": "Card",
+      "Transform": {
+        "posX": 0.5907324,
+        "posY": 1.30005717,
+        "posZ": -0.590732753,
+        "rotX": 0.0,
+        "rotY": 225.000061,
+        "rotZ": 0.0,
+        "scaleX": 1.0,
+        "scaleY": 1.0,
+        "scaleZ": 1.0
+      },
+      "Nickname": "InHand",
+      "Description": "",
+      "ColorDiffuse": {
+        "r": 0.713235259,
+        "g": 0.713235259,
+        "b": 0.713235259
+      },
+      "Locked": false,
+      "Grid": true,
+      "Snap": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "CardID": 52,
+      "SidewaysCard": false,
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "GUID": "1a088b"
+    },
+    {
+      "Name": "Card",
+      "Transform": {
+        "posX": -1.77219808,
+        "posY": 1.10005724,
+        "posZ": 1.77219737,
+        "rotX": 0.0,
+        "rotY": 225.000061,
+        "rotZ": 0.0,
+        "scaleX": 1.0,
+        "scaleY": 1.0,
+        "scaleZ": 1.0
+      },
+      "Nickname": "InHand",
+      "Description": "",
+      "ColorDiffuse": {
+        "r": 0.713235259,
+        "g": 0.713235259,
+        "b": 0.713235259
+      },
+      "Locked": false,
+      "Grid": true,
+      "Snap": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "CardID": 52,
+      "SidewaysCard": false,
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "GUID": "bf8ff0"
+    },
+    {
+      "Name": "Card",
+      "Transform": {
+        "posX": -0.5907329,
+        "posY": 1.20005727,
+        "posZ": 0.590732336,
+        "rotX": 0.0,
+        "rotY": 225.000061,
+        "rotZ": 0.0,
+        "scaleX": 1.0,
+        "scaleY": 1.0,
+        "scaleZ": 1.0
+      },
+      "Nickname": "InHand",
+      "Description": "",
+      "ColorDiffuse": {
+        "r": 0.713235259,
+        "g": 0.713235259,
+        "b": 0.713235259
+      },
+      "Locked": false,
+      "Grid": true,
+      "Snap": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "CardID": 52,
+      "SidewaysCard": false,
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "GUID": "91a3a9"
+    },
+    {
+      "Name": "Card",
+      "Transform": {
+        "posX": 1.7721976,
+        "posY": 1.4000572,
+        "posZ": -1.77219772,
+        "rotX": 0.0,
+        "rotY": 225.000076,
+        "rotZ": 0.0,
+        "scaleX": 1.0,
+        "scaleY": 1.0,
+        "scaleZ": 1.0
+      },
+      "Nickname": "InHand",
+      "Description": "",
+      "ColorDiffuse": {
+        "r": 0.713235259,
+        "g": 0.713235259,
+        "b": 0.713235259
+      },
+      "Locked": false,
+      "Grid": true,
+      "Snap": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "CardID": 52,
+      "SidewaysCard": false,
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "GUID": "a064bd"
+    },
+    {
+      "Name": "Card",
+      "Transform": {
+        "posX": 2.95366287,
+        "posY": 1.50005722,
+        "posZ": -2.95366287,
+        "rotX": 0.0,
+        "rotY": 225.000076,
+        "rotZ": 0.0,
+        "scaleX": 1.0,
+        "scaleY": 1.0,
+        "scaleZ": 1.0
+      },
+      "Nickname": "InHand",
+      "Description": "",
+      "ColorDiffuse": {
+        "r": 0.713235259,
+        "g": 0.713235259,
+        "b": 0.713235259
+      },
+      "Locked": false,
+      "Grid": true,
+      "Snap": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "CardID": 52,
+      "SidewaysCard": false,
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "GUID": "766da2"
+    },
+    {
+      "Name": "Card",
+      "Transform": {
+        "posX": 3.02743888,
+        "posY": 1.03171277,
+        "posZ": 3.34327364,
+        "rotX": -3.913999E-06,
+        "rotY": 225.0135,
+        "rotZ": -4.577812E-06,
+        "scaleX": 1.0,
+        "scaleY": 1.0,
+        "scaleZ": 1.0
+      },
+      "Nickname": "notInHand",
+      "Description": "",
+      "ColorDiffuse": {
+        "r": 0.713235259,
+        "g": 0.713235259,
+        "b": 0.713235259
+      },
+      "Locked": false,
+      "Grid": true,
+      "Snap": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "CardID": 52,
+      "SidewaysCard": false,
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "GUID": "362790"
+    },
+    {
+      "Name": "Card",
+      "Transform": {
+        "posX": -4.424659,
+        "posY": 1.03171313,
+        "posZ": 4.01898575,
+        "rotX": -4.32177649E-06,
+        "rotY": 225.0135,
+        "rotZ": 1.75141679E-06,
+        "scaleX": 1.0,
+        "scaleY": 1.0,
+        "scaleZ": 1.0
+      },
+      "Nickname": "notInHand",
+      "Description": "",
+      "ColorDiffuse": {
+        "r": 0.713235259,
+        "g": 0.713235259,
+        "b": 0.713235259
+      },
+      "Locked": false,
+      "Grid": true,
+      "Snap": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "CardID": 52,
+      "SidewaysCard": false,
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "GUID": "292aeb"
+    },
+    {
+      "Name": "Card",
+      "Transform": {
+        "posX": 4.59214163,
+        "posY": 1.03171313,
+        "posZ": -4.67916346,
+        "rotX": -1.12985881E-05,
+        "rotY": 225.0135,
+        "rotZ": 3.15490638E-07,
+        "scaleX": 1.0,
+        "scaleY": 1.0,
+        "scaleZ": 1.0
+      },
+      "Nickname": "notInHand",
+      "Description": "",
+      "ColorDiffuse": {
+        "r": 0.713235259,
+        "g": 0.713235259,
+        "b": 0.713235259
+      },
+      "Locked": false,
+      "Grid": true,
+      "Snap": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "CardID": 52,
+      "SidewaysCard": false,
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "GUID": "0e8b5f"
+    }
+  ],
+  "TabStates": {
+    "0": {
+      "title": "Rules",
+      "body": "",
+      "color": "Grey",
+      "visibleColor": {
+        "r": 0.5,
+        "g": 0.5,
+        "b": 0.5
+      },
+      "id": 0
+    },
+    "1": {
+      "title": "White",
+      "body": "",
+      "color": "White",
+      "visibleColor": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0
+      },
+      "id": 1
+    },
+    "2": {
+      "title": "Brown",
+      "body": "",
+      "color": "Brown",
+      "visibleColor": {
+        "r": 0.443,
+        "g": 0.231,
+        "b": 0.09
+      },
+      "id": 2
+    },
+    "3": {
+      "title": "Red",
+      "body": "",
+      "color": "Red",
+      "visibleColor": {
+        "r": 0.856,
+        "g": 0.1,
+        "b": 0.094
+      },
+      "id": 3
+    },
+    "4": {
+      "title": "Orange",
+      "body": "",
+      "color": "Orange",
+      "visibleColor": {
+        "r": 0.956,
+        "g": 0.392,
+        "b": 0.113
+      },
+      "id": 4
+    },
+    "5": {
+      "title": "Yellow",
+      "body": "",
+      "color": "Yellow",
+      "visibleColor": {
+        "r": 0.905,
+        "g": 0.898,
+        "b": 0.172
+      },
+      "id": 5
+    },
+    "6": {
+      "title": "Green",
+      "body": "",
+      "color": "Green",
+      "visibleColor": {
+        "r": 0.192,
+        "g": 0.701,
+        "b": 0.168
+      },
+      "id": 6
+    },
+    "7": {
+      "title": "Blue",
+      "body": "",
+      "color": "Blue",
+      "visibleColor": {
+        "r": 0.118,
+        "g": 0.53,
+        "b": 1.0
+      },
+      "id": 7
+    },
+    "8": {
+      "title": "Teal",
+      "body": "",
+      "color": "Teal",
+      "visibleColor": {
+        "r": 0.129,
+        "g": 0.694,
+        "b": 0.607
+      },
+      "id": 8
+    },
+    "9": {
+      "title": "Purple",
+      "body": "",
+      "color": "Purple",
+      "visibleColor": {
+        "r": 0.627,
+        "g": 0.125,
+        "b": 0.941
+      },
+      "id": 9
+    },
+    "10": {
+      "title": "Pink",
+      "body": "",
+      "color": "Pink",
+      "visibleColor": {
+        "r": 0.96,
+        "g": 0.439,
+        "b": 0.807
+      },
+      "id": 10
+    },
+    "11": {
+      "title": "Black",
+      "body": "",
+      "color": "Black",
+      "visibleColor": {
+        "r": 0.25,
+        "g": 0.25,
+        "b": 0.25
+      },
+      "id": 11
+    }
+  }
+}

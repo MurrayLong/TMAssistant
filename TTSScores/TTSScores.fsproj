@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <WarningLevel>0</WarningLevel>
+    <DefineConstants>TRACE;DOTNET</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Enviroment.fs" />
+    <Compile Include="Vector.fs" />
+    <Compile Include="Transform.fs" />
+    <Compile Include="Table.fs" />
+    <Compile Include="TTSJson.fs" />
+    <Compile Include="Result.fs" />
+    <Compile Include="TerraformingMars.fs" />
+    <Compile Include="Program.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+  </ItemGroup>
+
+</Project>
