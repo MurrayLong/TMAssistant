@@ -49,6 +49,7 @@ let boardFor player = (objectsNamed <| sprintf "%A Board" player) >> Seq.head
 
 [<StructuredFormatDisplay("{AsString}")>]
 type GameState = { 
+        Generation: int option;
         O2: int option; 
         Temp: int option;
         TR: Map<Player, int option>
@@ -90,6 +91,10 @@ let simpleCounter guid offset scene =
     let snap = onSnapPoint scene marker
     Option.map (fun v->v-offset) snap 
 
+let Generation = 
+    let scale x = if (x=0) then 100 else x
+    scoreTrack (globalSnapPoints >> between (98,198)) (objectWithID "5dc1b8") >> scale >> Some
+
 let O2Level = 
     let scale x = 14-x
     scoreTrack (globalSnapPoints >> between (81,95)) (objectWithID "c8926e") >> scale >> Some
@@ -106,6 +111,7 @@ let TRMarker player =
 
 let interpret scene =
     {
+        Generation = Generation scene;
         O2 = O2Level scene;
         Temp = TempLevel scene;
         TR = Player.All |> Array.map (fun p->(p,TRMarker p scene)) 
@@ -114,15 +120,24 @@ let interpret scene =
 
 let loadFile file = TTSJson.loadScene file |> interpret
 
+let maybeDescription = function
+    | Some x -> sprintf "%A" x
+    | None -> "<<Unknown>>"
+
 let TRString state = 
     let TRForPlayer p = Map.find p state.TR
-    let TRForPlayerString (p:Player) = sprintf """ %s: %A""" (p.ToString()) (TRForPlayer p)
+    let TRForPlayerString (p:Player) = sprintf "\t %s: %s\n" (p.ToString()) (maybeDescription <| TRForPlayer p)
     Player.All  |> Seq.map TRForPlayerString 
                 |> Seq.fold (+) ""
 
+
 let format state  = 
-    sprintf """O2: %A%%
-Temp: %A c
-TR: %s
-    """ state.O2 state.Temp (TRString state)
+    sprintf "Generation: %s
+O2: %s%%
+Temp: %s c
+TR: \n%s"   
+        (maybeDescription state.Generation) 
+        (maybeDescription state.O2) 
+        (maybeDescription state.Temp) 
+        (TRString state)
 
