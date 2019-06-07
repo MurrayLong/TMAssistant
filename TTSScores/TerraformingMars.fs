@@ -28,6 +28,14 @@ Miner
 
 
 type Resource = | MCr | Steal | Titanium | Plants | Power | Heat
+with 
+    member this.ToString() = match this with 
+        | MCr -> "MCr"
+        | Steal -> "Steal"
+        | Titanium -> "Ti"
+        | Plants -> "Plants"
+        | Power -> "Power"
+        | Heat -> "Heat"
 
 type Player = | Yellow | Green | Red | Blue | Black
 with 
@@ -62,43 +70,52 @@ let objectsNamed name scene = scene.ObjectStates |> Array.filter (fun g->g.Nickn
 let objectWithID id scene = scene.ObjectStates |> Seq.filter (fun g->g.GUID=id)
 
 let markersFor player = objectsNamed <| sprintf "%A Cube" player 
-let boardFor player = (objectsNamed <| sprintf "%A Board" player) >> Seq.head
 
-let scoreTrack snapPoints markers scene =
+let scoreTrack snapPoints markers scale scene =
     let snapIndex (x:GameObject) = getSnapPointIndex (snapPoints scene) x
     scene |> markers 
           |> Seq.map snapIndex
-          |> Seq.map (Option.defaultValue 0)
+          |> Seq.choose id
+          |> Seq.map scale
           |> Seq.fold (+) 0
 
 let rec between (a,b) = 
     if (a>b) then between (b,a)
     else Seq.skip(a) >> Seq.take(1+(b-a))
 
-let playerBoard = function
-    | Yellow -> objectWithID "414e30"
-    | Red ->    objectWithID "b1cfa0"
-    | Black ->  objectWithID "583d53"
-    | Blue ->   objectWithID "75192e"
-    | Green ->  objectWithID "31b4c1"
+let selectIndexes indexes l = 
+  let arr = l |> Seq.toArray
+  seq {
+    for i in indexes do 
+    yield arr.[i]
+  }
 
-let CRIncome player = 
-    let snapPoints = (localSnapPoints (boardFor player)) >> between (9,100)
-    scoreTrack snapPoints (markersFor player)
+let playerBoard = function
+    | Yellow -> objectWithID "414e30" 
+    | Red ->    objectWithID "b1cfa0" 
+    | Black ->  objectWithID "583d53" 
+    | Blue ->   objectWithID "75192e" 
+    | Green ->  objectWithID "31b4c1" 
+
+let CRIncome player scene = 
+    let scale x = x-5
+    let board = playerBoard player >> Seq.head
+    let snapPoints = (localSnapPoints board) >> selectIndexes [0;1;2;3;4;10;9;8;7;6;5;11;12;13;14;15]
+    scoreTrack snapPoints (markersFor player) scale scene
 
 let O2Level = 
     let scale x = 14-x
-    scoreTrack (globalSnapPoints >> between (81,95)) (objectWithID "c8926e") >> scale >> Some
+    scoreTrack (globalSnapPoints >> between (81,95)) (objectWithID "c8926e") scale >> Some
 
 let oceanSnapIndex = 80
 
 let TempLevel = 
     let scale x = 2*(x-15) 
-    scoreTrack (globalSnapPoints >> between (60,79)) (objectWithID "5a3116") >> scale >> Some
+    scoreTrack (globalSnapPoints >> between (60,79)) (objectWithID "5a3116") scale >> Some
 
 let TRMarker player = 
     let scale x = if (x=0) then 100 else x
-    scoreTrack (globalSnapPoints >> between (98,198)) (markersFor player) >> scale >> Some
+    scoreTrack (globalSnapPoints >> between (98,198)) (markersFor player) scale >> Some
 
 let oceans scene = 
   let remaining = 
@@ -112,7 +129,7 @@ let oceans scene =
 let playerState player scene = 
   {
       TR = TRMarker player scene |> Option.defaultValue 0
-      Resources = Map.empty 
+      Resources = [ (MCr, { income= CRIncome player scene;  stockpile=0})] |> Map.ofSeq
     }
 
 let interpret scene =

@@ -12,7 +12,6 @@ let rotate (rotx, roty, rotz) = rotateZ rotz>> rotateX rotx>> rotateY roty
 let undoRotation (rotx, roty, rotz)  = rotateY -roty >> rotateX -rotx >> rotateZ -rotz
 
 
-
 type Transform with
     member this.Apply = scaleComponents this.Scale  
                         >> rotate this.Rotation

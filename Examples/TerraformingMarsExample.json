@@ -3,7 +3,7 @@
   "GameMode": "terraforming mars",
   "Gravity": 0.5,
   "PlayArea": 0.5,
-  "Date": "6/7/2019 10:49:12 PM",
+  "Date": "6/8/2019 12:09:50 AM",
   "Table": "Table_Custom",
   "TableURL": "http://i.imgur.com/B0rxVzF.jpg",
   "Sky": "Sky_Tunnel",
@@ -76,9 +76,9 @@
           "rotX": 0.0,
           "rotY": 179.62738,
           "rotZ": 0.0,
-          "scaleX": 4.47176838,
+          "scaleX": 4.474487,
           "scaleY": 7.0,
-          "scaleZ": 2.56785536
+          "scaleZ": 2.56962562
         }
       },
       {
@@ -90,9 +90,9 @@
           "rotX": 0.0,
           "rotY": 180.960617,
           "rotZ": 0.0,
-          "scaleX": 9.339105,
+          "scaleX": 9.343734,
           "scaleY": 7.0,
-          "scaleZ": 3.46884131
+          "scaleZ": 3.47036481
         }
       },
       {
@@ -106,7 +106,7 @@
           "rotZ": 0.0,
           "scaleX": 4.60288858,
           "scaleY": 7.0,
-          "scaleZ": 3.67007732
+          "scaleZ": 3.66985846
         }
       },
       {
@@ -120,7 +120,7 @@
           "rotZ": 0.0,
           "scaleX": 9.806147,
           "scaleY": 7.0,
-          "scaleZ": 2.60231566
+          "scaleZ": 2.60228276
         }
       },
       {
@@ -132,9 +132,9 @@
           "rotX": 0.0,
           "rotY": 358.9205,
           "rotZ": 0.0,
-          "scaleX": 4.86971331,
+          "scaleX": 4.869432,
           "scaleY": 7.0,
-          "scaleZ": 3.33568525
+          "scaleZ": 3.335437
         }
       },
       {
@@ -146,9 +146,9 @@
           "rotX": 0.0,
           "rotY": 269.736481,
           "rotZ": 0.0,
-          "scaleX": 4.80519152,
+          "scaleX": 4.805975,
           "scaleY": 7.0,
-          "scaleZ": 2.66864467
+          "scaleZ": 2.66911
         }
       },
       {
@@ -160,7 +160,7 @@
           "rotX": 0.0,
           "rotY": 269.736481,
           "rotZ": 0.0,
-          "scaleX": 9.539305,
+          "scaleX": 9.538422,
           "scaleY": 7.0,
           "scaleZ": 2.86846828
         }
@@ -174,9 +174,9 @@
           "rotX": 0.0,
           "rotY": 180.840576,
           "rotZ": 0.0,
-          "scaleX": 4.777163,
+          "scaleX": 4.77902937,
           "scaleY": 7.0,
-          "scaleZ": 3.06099725
+          "scaleZ": 3.061928
         }
       },
       {
@@ -188,7 +188,7 @@
           "rotX": 0.0,
           "rotY": 178.841034,
           "rotZ": 0.0,
-          "scaleX": 9.339517,
+          "scaleX": 9.340327,
           "scaleY": 7.0,
           "scaleZ": 2.467949
         }
@@ -204,7 +204,7 @@
           "rotZ": 0.0,
           "scaleX": 9.114626,
           "scaleY": 7.0,
-          "scaleZ": 3.200347
+          "scaleZ": 3.20013428
         }
       }
     ]
@@ -219,6 +219,183 @@
     "PassTurns": true,
     "TurnColor": ""
   },
+  "VectorLines": [
+    {
+      "points3": [
+        {
+          "x": -15.4310875,
+          "y": 0.9711323,
+          "z": -23.963253
+        },
+        {
+          "x": -15.50794,
+          "y": 0.9711323,
+          "z": -23.9412422
+        },
+        {
+          "x": -15.5747929,
+          "y": 0.9711323,
+          "z": -23.9297218
+        },
+        {
+          "x": -15.6404724,
+          "y": 0.9711323,
+          "z": -23.9389114
+        },
+        {
+          "x": -15.6752577,
+          "y": 0.9711323,
+          "z": -23.98992
+        },
+        {
+          "x": -15.6810226,
+          "y": 0.9711304,
+          "z": -24.0516186
+        },
+        {
+          "x": -15.631999,
+          "y": 0.9711304,
+          "z": -24.0833035
+        },
+        {
+          "x": -15.5836506,
+          "y": 0.9711304,
+          "z": -24.10466
+        },
+        {
+          "x": -15.54362,
+          "y": 0.9711304,
+          "z": -24.1463661
+        },
+        {
+          "x": -15.4931164,
+          "y": 0.9711304,
+          "z": -24.20856
+        },
+        {
+          "x": -15.53783,
+          "y": 0.9711304,
+          "z": -24.2485428
+        },
+        {
+          "x": -15.5936031,
+          "y": 0.9711304,
+          "z": -24.25775
+        },
+        {
+          "x": -15.716958,
+          "y": 0.9711304,
+          "z": -24.23521
+        },
+        {
+          "x": -15.7934294,
+          "y": 0.9711304,
+          "z": -24.21349
+        },
+        {
+          "x": -15.8518152,
+          "y": 0.9711304,
+          "z": -24.181839
+        },
+        {
+          "x": -15.7878571,
+          "y": 0.9711304,
+          "z": -24.1522923
+        },
+        {
+          "x": -15.7049751,
+          "y": 0.9711304,
+          "z": -24.1230316
+        },
+        {
+          "x": -15.631999,
+          "y": 0.9711304,
+          "z": -24.0833035
+        }
+      ],
+      "color": {
+        "r": 0.192,
+        "g": 0.701,
+        "b": 0.168
+      },
+      "thickness": 0.1
+    },
+    {
+      "points3": [
+        {
+          "x": -15.407629,
+          "y": 0.9711323,
+          "z": -23.8704929
+        },
+        {
+          "x": -15.4656725,
+          "y": 0.9711323,
+          "z": -23.8487186
+        },
+        {
+          "x": -15.5136967,
+          "y": 0.9711323,
+          "z": -23.83749
+        },
+        {
+          "x": -15.5991173,
+          "y": 0.9711323,
+          "z": -23.836
+        },
+        {
+          "x": -15.674427,
+          "y": 0.9711323,
+          "z": -23.8450642
+        },
+        {
+          "x": -15.7212429,
+          "y": 0.9711323,
+          "z": -23.854599
+        },
+        {
+          "x": -15.7667484,
+          "y": 0.9711323,
+          "z": -23.8849316
+        },
+        {
+          "x": -15.7723684,
+          "y": 0.9711323,
+          "z": -23.9469185
+        },
+        {
+          "x": -15.6072826,
+          "y": 0.9711304,
+          "z": -24.0220413
+        },
+        {
+          "x": -15.5500145,
+          "y": 0.9711304,
+          "z": -24.0333443
+        },
+        {
+          "x": -15.4821882,
+          "y": 0.9711304,
+          "z": -24.0653973
+        },
+        {
+          "x": -15.45109,
+          "y": 0.9711304,
+          "z": -24.1172638
+        },
+        {
+          "x": -15.5424576,
+          "y": 0.9711304,
+          "z": -24.1668472
+        }
+      ],
+      "color": {
+        "r": 0.192,
+        "g": 0.701,
+        "b": 0.168
+      },
+      "thickness": 0.1
+    }
+  ],
   "ObjectStates": [
     {
       "Name": "Custom_Tile",
@@ -17417,12 +17594,12 @@
     {
       "Name": "Custom_Tile",
       "Transform": {
-        "posX": -11.0754547,
-        "posY": 0.96110183,
-        "posZ": -25.9645863,
-        "rotX": -0.00284344726,
-        "rotY": 179.972046,
-        "rotZ": -0.000876471,
+        "posX": -11.0754662,
+        "posY": 0.9609365,
+        "posZ": -25.9642715,
+        "rotX": 359.991577,
+        "rotY": 179.9718,
+        "rotZ": -0.00212919968,
         "scaleX": 5.46391058,
         "scaleY": 1.0,
         "scaleZ": 5.46391058
@@ -18317,57 +18494,12 @@
     {
       "Name": "Custom_Model",
       "Transform": {
-        "posX": -14.3721676,
-        "posY": 1.38497388,
-        "posZ": -27.0271111,
-        "rotX": 0.00318358047,
-        "rotY": 359.99118,
-        "rotZ": 0.00106452871,
-        "scaleX": 0.250000417,
-        "scaleY": 0.250000417,
-        "scaleZ": 0.250000417
-      },
-      "Nickname": "Yellow Cube",
-      "Description": "",
-      "ColorDiffuse": {
-        "r": 0.905,
-        "g": 0.898,
-        "b": 0.171998173
-      },
-      "Locked": false,
-      "Grid": true,
-      "Snap": true,
-      "IgnoreFoW": false,
-      "Autoraise": true,
-      "Sticky": false,
-      "Tooltip": false,
-      "GridProjection": false,
-      "HideWhenFaceDown": false,
-      "Hands": false,
-      "CustomMesh": {
-        "MeshURL": "http://pastebin.com/raw/83Xzh3HY",
-        "DiffuseURL": "",
-        "NormalURL": "",
-        "ColliderURL": "",
-        "Convex": true,
-        "MaterialIndex": 0,
-        "TypeIndex": 0,
-        "CastShadows": true
-      },
-      "XmlUI": "",
-      "LuaScript": "",
-      "LuaScriptState": "",
-      "GUID": "bb2eae"
-    },
-    {
-      "Name": "Custom_Model",
-      "Transform": {
-        "posX": -14.7371693,
-        "posY": 1.38486826,
-        "posZ": -25.2269878,
-        "rotX": 0.00350726629,
-        "rotY": 359.9879,
-        "rotZ": 0.001318769,
+        "posX": -14.7360935,
+        "posY": 1.38461828,
+        "posZ": -25.7684383,
+        "rotX": 0.00899385,
+        "rotY": 359.988739,
+        "rotZ": 0.00268845866,
         "scaleX": 0.250000417,
         "scaleY": 0.250000417,
         "scaleZ": 0.250000417
@@ -18407,12 +18539,12 @@
     {
       "Name": "Custom_Model",
       "Transform": {
-        "posX": -14.1465139,
-        "posY": 1.384893,
-        "posZ": -25.7711372,
-        "rotX": 0.00373657327,
-        "rotY": 359.9775,
-        "rotZ": 0.00131742808,
+        "posX": -13.0687141,
+        "posY": 1.38448,
+        "posZ": -25.22571,
+        "rotX": 0.0120235439,
+        "rotY": 359.977783,
+        "rotZ": 0.0018700161,
         "scaleX": 0.250000417,
         "scaleY": 0.250000417,
         "scaleZ": 0.250000417
@@ -19737,6 +19869,456 @@
       "LuaScript": "",
       "LuaScriptState": "",
       "GUID": "8a0f18"
+    },
+    {
+      "Name": "Custom_Model",
+      "Transform": {
+        "posX": -9.918342,
+        "posY": 1.38456786,
+        "posZ": -24.7085762,
+        "rotX": 0.01106528,
+        "rotY": 359.9799,
+        "rotZ": 0.00160031184,
+        "scaleX": 0.250000417,
+        "scaleY": 0.250000417,
+        "scaleZ": 0.250000417
+      },
+      "Nickname": "Yellow Cube",
+      "Description": "",
+      "ColorDiffuse": {
+        "r": 0.905,
+        "g": 0.898,
+        "b": 0.171998173
+      },
+      "Locked": false,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "Autoraise": true,
+      "Sticky": false,
+      "Tooltip": false,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "CustomMesh": {
+        "MeshURL": "http://pastebin.com/raw/83Xzh3HY",
+        "DiffuseURL": "",
+        "NormalURL": "",
+        "ColliderURL": "",
+        "Convex": true,
+        "MaterialIndex": 0,
+        "TypeIndex": 0,
+        "CastShadows": true
+      },
+      "XmlUI": "",
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "GUID": "6342d4"
+    },
+    {
+      "Name": "Custom_Model",
+      "Transform": {
+        "posX": -9.928571,
+        "posY": 1.38461375,
+        "posZ": -25.2588959,
+        "rotX": 0.0116888834,
+        "rotY": 359.982666,
+        "rotZ": 0.00130108534,
+        "scaleX": 0.250000417,
+        "scaleY": 0.250000417,
+        "scaleZ": 0.250000417
+      },
+      "Nickname": "Yellow Cube",
+      "Description": "",
+      "ColorDiffuse": {
+        "r": 0.905,
+        "g": 0.898,
+        "b": 0.171998173
+      },
+      "Locked": false,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "Autoraise": true,
+      "Sticky": false,
+      "Tooltip": false,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "CustomMesh": {
+        "MeshURL": "http://pastebin.com/raw/83Xzh3HY",
+        "DiffuseURL": "",
+        "NormalURL": "",
+        "ColliderURL": "",
+        "Convex": true,
+        "MaterialIndex": 0,
+        "TypeIndex": 0,
+        "CastShadows": true
+      },
+      "XmlUI": "",
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "GUID": "c07a1c"
+    },
+    {
+      "Name": "Custom_Model",
+      "Transform": {
+        "posX": -5.828026,
+        "posY": 1.38473785,
+        "posZ": -24.6967564,
+        "rotX": 0.0113922069,
+        "rotY": 359.9832,
+        "rotZ": 0.004176002,
+        "scaleX": 0.250000417,
+        "scaleY": 0.250000417,
+        "scaleZ": 0.250000417
+      },
+      "Nickname": "Yellow Cube",
+      "Description": "",
+      "ColorDiffuse": {
+        "r": 0.905,
+        "g": 0.898,
+        "b": 0.171998173
+      },
+      "Locked": false,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "Autoraise": true,
+      "Sticky": false,
+      "Tooltip": false,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "CustomMesh": {
+        "MeshURL": "http://pastebin.com/raw/83Xzh3HY",
+        "DiffuseURL": "",
+        "NormalURL": "",
+        "ColliderURL": "",
+        "Convex": true,
+        "MaterialIndex": 0,
+        "TypeIndex": 0,
+        "CastShadows": true
+      },
+      "XmlUI": "",
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "GUID": "502afe"
+    },
+    {
+      "Name": "Custom_Model",
+      "Transform": {
+        "posX": -5.8223033,
+        "posY": 1.38487625,
+        "posZ": -25.2621746,
+        "rotX": 0.00972003,
+        "rotY": 359.9831,
+        "rotZ": 0.00324282376,
+        "scaleX": 0.250000417,
+        "scaleY": 0.250000417,
+        "scaleZ": 0.250000417
+      },
+      "Nickname": "Yellow Cube",
+      "Description": "",
+      "ColorDiffuse": {
+        "r": 0.905,
+        "g": 0.898,
+        "b": 0.171998173
+      },
+      "Locked": false,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "Autoraise": true,
+      "Sticky": false,
+      "Tooltip": false,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "CustomMesh": {
+        "MeshURL": "http://pastebin.com/raw/83Xzh3HY",
+        "DiffuseURL": "",
+        "NormalURL": "",
+        "ColliderURL": "",
+        "Convex": true,
+        "MaterialIndex": 0,
+        "TypeIndex": 0,
+        "CastShadows": true
+      },
+      "XmlUI": "",
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "GUID": "97a5c8"
+    },
+    {
+      "Name": "Custom_Model",
+      "Transform": {
+        "posX": -10.7457085,
+        "posY": 1.38495243,
+        "posZ": -27.02034,
+        "rotX": 0.00907289051,
+        "rotY": 359.98,
+        "rotZ": 0.00250289822,
+        "scaleX": 0.250000417,
+        "scaleY": 0.250000417,
+        "scaleZ": 0.250000417
+      },
+      "Nickname": "Yellow Cube",
+      "Description": "",
+      "ColorDiffuse": {
+        "r": 0.905,
+        "g": 0.898,
+        "b": 0.171998173
+      },
+      "Locked": false,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "Autoraise": true,
+      "Sticky": false,
+      "Tooltip": false,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "CustomMesh": {
+        "MeshURL": "http://pastebin.com/raw/83Xzh3HY",
+        "DiffuseURL": "",
+        "NormalURL": "",
+        "ColliderURL": "",
+        "Convex": true,
+        "MaterialIndex": 0,
+        "TypeIndex": 0,
+        "CastShadows": true
+      },
+      "XmlUI": "",
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "GUID": "a12f71"
+    },
+    {
+      "Name": "Custom_Model",
+      "Transform": {
+        "posX": -10.756794,
+        "posY": 1.38504219,
+        "posZ": -27.5849533,
+        "rotX": 0.008908373,
+        "rotY": 359.983063,
+        "rotZ": 0.00257916772,
+        "scaleX": 0.250000417,
+        "scaleY": 0.250000417,
+        "scaleZ": 0.250000417
+      },
+      "Nickname": "Yellow Cube",
+      "Description": "",
+      "ColorDiffuse": {
+        "r": 0.905,
+        "g": 0.898,
+        "b": 0.171998173
+      },
+      "Locked": false,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "Autoraise": true,
+      "Sticky": false,
+      "Tooltip": false,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "CustomMesh": {
+        "MeshURL": "http://pastebin.com/raw/83Xzh3HY",
+        "DiffuseURL": "",
+        "NormalURL": "",
+        "ColliderURL": "",
+        "Convex": true,
+        "MaterialIndex": 0,
+        "TypeIndex": 0,
+        "CastShadows": true
+      },
+      "XmlUI": "",
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "GUID": "0952c7"
+    },
+    {
+      "Name": "Custom_Model",
+      "Transform": {
+        "posX": -6.193274,
+        "posY": 1.38515723,
+        "posZ": -27.0639477,
+        "rotX": 0.008394646,
+        "rotY": 359.9831,
+        "rotZ": 0.002376212,
+        "scaleX": 0.250000417,
+        "scaleY": 0.250000417,
+        "scaleZ": 0.250000417
+      },
+      "Nickname": "Yellow Cube",
+      "Description": "",
+      "ColorDiffuse": {
+        "r": 0.905,
+        "g": 0.898,
+        "b": 0.171998173
+      },
+      "Locked": false,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "Autoraise": true,
+      "Sticky": false,
+      "Tooltip": false,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "CustomMesh": {
+        "MeshURL": "http://pastebin.com/raw/83Xzh3HY",
+        "DiffuseURL": "",
+        "NormalURL": "",
+        "ColliderURL": "",
+        "Convex": true,
+        "MaterialIndex": 0,
+        "TypeIndex": 0,
+        "CastShadows": true
+      },
+      "XmlUI": "",
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "GUID": "a4cacf"
+    },
+    {
+      "Name": "Custom_Model",
+      "Transform": {
+        "posX": -6.165809,
+        "posY": 1.38523746,
+        "posZ": -27.6114082,
+        "rotX": 0.008197768,
+        "rotY": 359.982635,
+        "rotZ": 0.002261111,
+        "scaleX": 0.250000417,
+        "scaleY": 0.250000417,
+        "scaleZ": 0.250000417
+      },
+      "Nickname": "Yellow Cube",
+      "Description": "",
+      "ColorDiffuse": {
+        "r": 0.905,
+        "g": 0.898,
+        "b": 0.171998173
+      },
+      "Locked": false,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "Autoraise": true,
+      "Sticky": false,
+      "Tooltip": false,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "CustomMesh": {
+        "MeshURL": "http://pastebin.com/raw/83Xzh3HY",
+        "DiffuseURL": "",
+        "NormalURL": "",
+        "ColliderURL": "",
+        "Convex": true,
+        "MaterialIndex": 0,
+        "TypeIndex": 0,
+        "CastShadows": true
+      },
+      "XmlUI": "",
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "GUID": "3b4800"
+    },
+    {
+      "Name": "Custom_Model",
+      "Transform": {
+        "posX": -15.4986763,
+        "posY": 1.38478708,
+        "posZ": -27.034214,
+        "rotX": 0.008287929,
+        "rotY": 359.982971,
+        "rotZ": 0.002435379,
+        "scaleX": 0.250000417,
+        "scaleY": 0.250000417,
+        "scaleZ": 0.250000417
+      },
+      "Nickname": "Yellow Cube",
+      "Description": "",
+      "ColorDiffuse": {
+        "r": 0.905,
+        "g": 0.898,
+        "b": 0.171998173
+      },
+      "Locked": false,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "Autoraise": true,
+      "Sticky": false,
+      "Tooltip": false,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "CustomMesh": {
+        "MeshURL": "http://pastebin.com/raw/83Xzh3HY",
+        "DiffuseURL": "",
+        "NormalURL": "",
+        "ColliderURL": "",
+        "Convex": true,
+        "MaterialIndex": 0,
+        "TypeIndex": 0,
+        "CastShadows": true
+      },
+      "XmlUI": "",
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "GUID": "31f6c6"
+    },
+    {
+      "Name": "Custom_Model",
+      "Transform": {
+        "posX": -15.4723606,
+        "posY": 1.38487566,
+        "posZ": -27.5676537,
+        "rotX": 0.00773677742,
+        "rotY": 359.982941,
+        "rotZ": 0.00218917476,
+        "scaleX": 0.250000417,
+        "scaleY": 0.250000417,
+        "scaleZ": 0.250000417
+      },
+      "Nickname": "Yellow Cube",
+      "Description": "",
+      "ColorDiffuse": {
+        "r": 0.905,
+        "g": 0.898,
+        "b": 0.171998173
+      },
+      "Locked": false,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "Autoraise": true,
+      "Sticky": false,
+      "Tooltip": false,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "CustomMesh": {
+        "MeshURL": "http://pastebin.com/raw/83Xzh3HY",
+        "DiffuseURL": "",
+        "NormalURL": "",
+        "ColliderURL": "",
+        "Convex": true,
+        "MaterialIndex": 0,
+        "TypeIndex": 0,
+        "CastShadows": true
+      },
+      "XmlUI": "",
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "GUID": "f6b984"
     }
   ],
   "SnapPoints": [
