@@ -31,13 +31,15 @@ type GameObject = { Name: string;
                     Nickname: string; 
                     GUID: string; 
                     Transform: Transform; 
-                    AttachedSnapPoints: Option<SnapPoint[]>
+                    AttachedSnapPoints: Option<SnapPoint[]>;
+                    Number: int;
                     }
     with member this.Convert() = {
         _gameObject.Name=this.Name;
         _gameObject.Nickname=this.Nickname;
         _gameObject.GUID=this.GUID;
         _gameObject.Transform=this.Transform.Convert();
+        _gameObject.Number=this.Number;
         _gameObject.AttachedSnapPoints = this.AttachedSnapPoints 
                     |> otherwise Array.empty
                     |> Array.map (fun v->v.Convert())
@@ -65,6 +67,7 @@ type Save = { SaveName:string; GameMode:string; Hands: Hands; ObjectStates: Game
                     |> otherwise Array.empty 
                     |> Array.map (fun w->w.Convert());
         }
+
 let load json = 
     let convert (a:Save) = a.Convert()
     json |> ofJson<Save> |> convert

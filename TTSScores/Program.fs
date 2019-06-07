@@ -2,6 +2,36 @@
 
 open System
 open TTSJson
+open Newtonsoft.Json
+open TerraformingMars
+
+let prettyJson obj = JsonConvert.SerializeObject(obj, Formatting.Indented)
+
+let formatIntOption = function
+  | Some x -> sprintf "%i" x
+  | None -> "[UNKNOWN]" 
+
+let formatPlayer (player:Player) (state:PlayerState) = 
+  sprintf "%A
+  TR: %i" player state.TR
+  
+
+let format (state:GameState)  = 
+    sprintf """O2: %s%%
+Temp: %s c
+Oceans placed %i/9
+%s
+    """ (formatIntOption state.O2) 
+        (formatIntOption state.Temp) 
+        state.Oceans
+        (state.Players |> Map.map (formatPlayer ) |> Map.fold (fun a _ b -> a+"\r\n\r\n"+b) "")
+
+let snapPointIndexUnderID id scene = 
+        let marker = Table.findbyID id scene 
+        let snap = Table.onSnapPoint marker scene 
+        snap |> printfn "Snap Point %A"
+
+let test a = [0]
 
 
 [<EntryPoint>]
@@ -9,7 +39,6 @@ let main argv =
     stdin.ReadToEnd()
         |> TTSJson.load 
         |> TerraformingMars.interpret
-        |> TerraformingMars.format
-        |> printfn "%s"
+        |> format 
+        |> Console.WriteLine 
     0
-

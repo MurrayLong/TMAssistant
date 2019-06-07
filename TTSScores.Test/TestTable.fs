@@ -14,13 +14,13 @@ module TestTable =
     [<Test>]
     let ``Test SnapPoints `` () = 
         let scene = TTSJson.loadScene "../../../Examples/SnapPointTest.json"
-        let onSnap1 = findNick scene "Snapped 1" |> Seq.head
-        let onSnap2 = findNick scene "Snapped 2"|> Seq.head
-        let notSnapped = findNick scene "NotSnapped" |> Seq.head
+        let onSnap1 = findNick "Snapped 1" scene |> Seq.head
+        let onSnap2 = findNick "Snapped 2" scene |> Seq.head
+        let notSnapped = findNick "NotSnapped" scene|> Seq.head
 
-        onSnapPoint scene onSnap1       |>  equal (Some 1)
-        onSnapPoint scene onSnap2       |>  equal (Some 0)
-        onSnapPoint scene notSnapped    |>  equal None 
+        onSnapPoint onSnap1 scene |>  equal (Some 1)
+        onSnapPoint onSnap2 scene |>  equal (Some 0)
+        onSnapPoint notSnapped scene |>  equal None 
 
     [<Test>]
     let ``Test hands `` ()=

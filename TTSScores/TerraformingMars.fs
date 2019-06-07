@@ -29,8 +29,6 @@ Miner
 
 type Resource = | MCr | Steal | Titanium | Plants | Power | Heat
 
-type ResourceState = {Resource: Resource; Income: int; Stockpiled: int}
-
 type Player = | Yellow | Green | Red | Blue | Black
 with 
     member this.ToString() = match this with 
@@ -41,54 +39,52 @@ with
         | Black -> "Black"
     static member All = [| Yellow ; Green ; Red ; Blue ; Black |]
 
-let objectsNamed name scene = scene.ObjectStates |> Array.filter (fun g->g.Nickname=name)
-let objectWithID id scene = scene.ObjectStates |> Seq.filter (fun g->g.GUID=id) 
+type ResourceState = {
+  income: int;
+  stockpile: int
+}
 
-let markersFor player = objectsNamed <| sprintf "%A Cube" player 
-let boardFor player = (objectsNamed <| sprintf "%A Board" player) >> Seq.head
+type PlayerState = {
+  TR: int ;
+  Resources: Map<Resource, ResourceState>
+}
 
 [<StructuredFormatDisplay("{AsString}")>]
 type GameState = { 
         O2: int option; 
         Temp: int option;
-        TR: Map<Player, int option>
-        } with
-    
-    member this.TRString = 
-        let TRForPlayer p = Map.find p this.TR
-        let TRForPlayerString (p:Player) = sprintf "%s: %A, " (p.ToString()) (TRForPlayer p)
-        Player.All  |> Seq.map TRForPlayerString 
-                    |> Seq.fold (+) ""
+        Oceans: int;
+        Players: Map<Player, PlayerState>
+        } 
 
-    override this.ToString() 
-        = sprintf "O2: %A  Temp: %A C TR: %s" this.O2 this.Temp this.TRString
 
-    member this.AsString = this.ToString()  
+let objectsNamed name scene = scene.ObjectStates |> Array.filter (fun g->g.Nickname=name)
+let objectWithID id scene = scene.ObjectStates |> Seq.filter (fun g->g.GUID=id)
 
-let otherwise x o = match o with
-                    | Some a -> a
-                    | None -> x
-                
+let markersFor player = objectsNamed <| sprintf "%A Cube" player 
+let boardFor player = (objectsNamed <| sprintf "%A Board" player) >> Seq.head
 
 let scoreTrack snapPoints markers scene =
-    let snapIndex (x:GameObject) = getSnapPointIndex (snapPoints scene) x.Transform.Translation
+    let snapIndex (x:GameObject) = getSnapPointIndex (snapPoints scene) x
     scene |> markers 
           |> Seq.map snapIndex
-          |> Seq.map (otherwise 0)
+          |> Seq.map (Option.defaultValue 0)
           |> Seq.fold (+) 0
 
 let rec between (a,b) = 
     if (a>b) then between (b,a)
     else Seq.skip(a) >> Seq.take(1+(b-a))
 
-let CRIncome player = 
-    let snapPoints =  (localSnapPoints (boardFor player)) >> between (9,100)
-    scoreTrack snapPoints (markersFor player)
+let playerBoard = function
+    | Yellow -> objectWithID "414e30"
+    | Red ->    objectWithID "b1cfa0"
+    | Black ->  objectWithID "583d53"
+    | Blue ->   objectWithID "75192e"
+    | Green ->  objectWithID "31b4c1"
 
-let simpleCounter guid offset scene = 
-    let marker = findbyID scene guid 
-    let snap = onSnapPoint scene marker
-    Option.map (fun v->v-offset) snap 
+let CRIncome player = 
+    let snapPoints = (localSnapPoints (boardFor player)) >> between (9,100)
+    scoreTrack snapPoints (markersFor player)
 
 let O2Level = 
     let scale x = 14-x
@@ -104,25 +100,30 @@ let TRMarker player =
     let scale x = if (x=0) then 100 else x
     scoreTrack (globalSnapPoints >> between (98,198)) (markersFor player) >> scale >> Some
 
+let oceans scene = 
+  let remaining = 
+    scene.ObjectStates 
+         |> Seq.filter (isOnSnapPoint (scene.SnapPoints.[oceanSnapIndex]))
+         |> Seq.tryHead
+         |> Option.map (fun v->if v.Number=0 then 1 else v.Number)
+         |> Option.defaultValue 0
+  9-remaining
+
+let playerState player scene = 
+  {
+      TR = TRMarker player scene |> Option.defaultValue 0
+      Resources = Map.empty 
+    }
+
 let interpret scene =
     {
         O2 = O2Level scene;
         Temp = TempLevel scene;
-        TR = Player.All |> Array.map (fun p->(p,TRMarker p scene)) 
-                        |> Map.ofArray
+        Oceans = oceans scene;
+        Players = Player.All 
+                  |> Array.map (fun p -> p, playerState  p scene) 
+                  |> Map.ofArray
     }
 
 let loadFile file = TTSJson.loadScene file |> interpret
-
-let TRString state = 
-    let TRForPlayer p = Map.find p state.TR
-    let TRForPlayerString (p:Player) = sprintf """ %s: %A""" (p.ToString()) (TRForPlayer p)
-    Player.All  |> Seq.map TRForPlayerString 
-                |> Seq.fold (+) ""
-
-let format state  = 
-    sprintf """O2: %A%%
-Temp: %A c
-TR: %s
-    """ state.O2 state.Temp (TRString state)
 
