@@ -23,11 +23,13 @@ let formatPlayer (player:Player) (state:PlayerState) =
   
 
 let format (state:GameState)  = 
-    sprintf """O2: %s%%
+    sprintf """Generation %s 
+O2: %s%%
 Temp: %s c
 Oceans placed %i/9
 %s
-    """ (formatIntOption state.O2) 
+    """ (formatIntOption state.Generation) 
+        (formatIntOption state.O2) 
         (formatIntOption state.Temp) 
         state.Oceans
         (state.Players |> Map.map (formatPlayer ) |> Map.fold (fun a _ b -> a+"\r\n\r\n"+b) "")

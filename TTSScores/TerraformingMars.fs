@@ -59,6 +59,7 @@ type PlayerState = {
 
 [<StructuredFormatDisplay("{AsString}")>]
 type GameState = { 
+        Generation: int option;
         O2: int option; 
         Temp: int option;
         Oceans: int;
@@ -130,6 +131,10 @@ let HeatIncome player scene =
     let snapPoints = (localSnapPoints board) >> selectIndexes (steelIncomeIndexes |> List.map (fun v->v+44))
     scoreTrack snapPoints (markersFor player) id scene
 
+let Generation = 
+    let scale x = if (x=0) then 100 else x
+    scoreTrack (globalSnapPoints >> between (98,198)) (objectWithID "5dc1b8") scale >> Some
+
 let O2Level = 
     let scale x = 14-x
     scoreTrack (globalSnapPoints >> between (81,95)) (objectWithID "c8926e") scale >> Some
@@ -166,8 +171,9 @@ let playerState player scene =
           ] |> Map.ofSeq
     }
 
-let interpret scene =
+let interpret (scene:Save) =
     {
+        Generation = Generation scene;
         O2 = O2Level scene;
         Temp = TempLevel scene;
         Oceans = oceans scene;
