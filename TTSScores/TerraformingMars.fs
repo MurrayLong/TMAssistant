@@ -103,6 +103,33 @@ let CRIncome player scene =
     let snapPoints = (localSnapPoints board) >> selectIndexes [0;1;2;3;4;10;9;8;7;6;5;11;12;13;14;15]
     scoreTrack snapPoints (markersFor player) scale scene
 
+let steelIncomeIndexes = [16;17;18;19;20;21;26;25;24;23;22]
+
+let SteelIncome player scene =
+    let board = playerBoard player >> Seq.head
+    let snapPoints = (localSnapPoints board) >> selectIndexes steelIncomeIndexes
+    scoreTrack snapPoints (markersFor player) id scene
+
+let TiIncome player scene =
+    let board = playerBoard player >> Seq.head
+    let snapPoints = (localSnapPoints board) >> selectIndexes (steelIncomeIndexes |> List.map (fun v->v+11))
+    scoreTrack snapPoints (markersFor player) id scene
+
+let PlantIncome player scene =
+    let board = playerBoard player >> Seq.head
+    let snapPoints = (localSnapPoints board) >> selectIndexes (steelIncomeIndexes |> List.map (fun v->v+22))
+    scoreTrack snapPoints (markersFor player) id scene
+
+let PowerIncome player scene =
+    let board = playerBoard player >> Seq.head
+    let snapPoints = (localSnapPoints board) >> selectIndexes (steelIncomeIndexes |> List.map (fun v->v+33))
+    scoreTrack snapPoints (markersFor player) id scene
+
+let HeatIncome player scene =
+    let board = playerBoard player >> Seq.head
+    let snapPoints = (localSnapPoints board) >> selectIndexes (steelIncomeIndexes |> List.map (fun v->v+44))
+    scoreTrack snapPoints (markersFor player) id scene
+
 let O2Level = 
     let scale x = 14-x
     scoreTrack (globalSnapPoints >> between (81,95)) (objectWithID "c8926e") scale >> Some
@@ -129,7 +156,14 @@ let oceans scene =
 let playerState player scene = 
   {
       TR = TRMarker player scene |> Option.defaultValue 0
-      Resources = [ (MCr, { income= CRIncome player scene;  stockpile=0})] |> Map.ofSeq
+      Resources = [ 
+                (MCr, { income= CRIncome player scene;  stockpile=0});
+                (Steal, { income= SteelIncome player scene;  stockpile=0});
+                (Titanium, { income= TiIncome player scene;  stockpile=0});
+                (Plants, { income= PlantIncome player scene;  stockpile=0});
+                (Power, { income= PowerIncome player scene;  stockpile=0});
+                (Heat, { income= HeatIncome player scene;  stockpile=0});
+          ] |> Map.ofSeq
     }
 
 let interpret scene =
@@ -143,4 +177,3 @@ let interpret scene =
     }
 
 let loadFile file = TTSJson.loadScene file |> interpret
-
