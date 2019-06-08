@@ -4,6 +4,7 @@
 
 module TerraformingMars
 open Table
+open Vector
 
 let phobos = 96
 let ganymede = 97
@@ -31,7 +32,7 @@ type Resource = | MCr | Steal | Titanium | Plants | Power | Heat
 with 
     member this.ToString() = match this with 
         | MCr -> "MCr"
-        | Steal -> "Steal"
+        | Steal -> "Steel"
         | Titanium -> "Ti"
         | Plants -> "Plant"
         | Power -> "Power"
@@ -45,7 +46,7 @@ with
         | Red -> "Red"
         | Blue -> "Blue"
         | Black -> "Black"
-    static member All = [| Yellow ; Green ; Red ; Blue ; Black |]
+    static member All = [ Yellow ; Green ; Red ; Blue ; Black ]
 
 
 type ResourceState = {
@@ -85,12 +86,12 @@ let stockPilesBounds = Map.ofList [
   });
   ]
 
+
 let WithinBoundry (board:GameObject) (boundry:StockPileBoundry) (obj:GameObject) = 
   let (x,y,z) = board.Transform.Reverse obj.Transform.Translation
   let (left,_,top) = boundry.TopLeft
   let (right,_,bottom) = boundry.BottomRight
   x<left && x>right && z > top && z<bottom
-
 
 type PlayerState = {
   TR: int ;
@@ -99,6 +100,8 @@ type PlayerState = {
 
 [<StructuredFormatDisplay("{AsString}")>]
 type GameState = { 
+        StartPlayer: Player;
+        CurrentPlayer: Player;
         Generation: int option;
         O2: int option; 
         Temp: int option;
@@ -217,6 +220,26 @@ let stocksOf resource player scene =
     |> Array.filter (WithinBoundry board boundry) 
     |> Seq.sumBy cubeValue 
 
+let startPlayer scene = 
+  let marker = findNick "First Player Token" scene |> Seq.head
+  let distanceToMarker (obj:GameObject) = horizontalDistaneSquare obj.Transform.Translation marker.Transform.Translation
+  let findBoard p = playerBoard p scene |> Seq.head
+  Player.All 
+    |> List.map (fun p->(p, findBoard p))
+    |> List.sortBy (snd >> distanceToMarker)
+    |> List.head
+    |> fst
+
+let currentPlayer scene = 
+  let marker = findNick "Current Player Token" scene |> Seq.head
+  let distanceToMarker (obj:GameObject) = horizontalDistaneSquare obj.Transform.Translation marker.Transform.Translation
+  let findBoard p = playerBoard p scene |> Seq.head
+  Player.All 
+    |> List.map (fun p->(p, findBoard p))
+    |> List.sortBy (snd >> distanceToMarker)
+    |> List.head
+    |> fst
+
 let playerState player scene = 
   {
       TR = TRMarker player scene |> Option.defaultValue 0
@@ -233,12 +256,14 @@ let playerState player scene =
 let interpret (scene:Save) =
     {
         Generation = Generation scene;
+        StartPlayer = startPlayer scene;
+        CurrentPlayer = currentPlayer scene;
         O2 = O2Level scene;
         Temp = TempLevel scene;
         Oceans = oceans scene;
         Players = Player.All 
-                  |> Array.map (fun p -> p, playerState  p scene) 
-                  |> Map.ofArray
+                  |> List.map (fun p -> p, playerState  p scene) 
+                  |> Map.ofList
     }
 
 let loadFile file = TTSJson.loadScene file |> interpret

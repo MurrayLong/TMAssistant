@@ -20,23 +20,16 @@ module TestTerraforingMarsExample =
     [<Test>]
     let ``Test Example State``() = 
         let gameState = TerraformingMars.loadFile "../../../Examples/TerraformingMarsExample.json"
-        gameState.O2 |> equal (Some 0)
-        gameState.Temp |> equal (Some 8)
-        gameState.Oceans |> equal 1
+        gameState.CurrentPlayer |> equal Yellow
+        gameState.StartPlayer |> equal Green
+        gameState.Oceans |> equal 3
+        gameState.O2 |> equal (Some 2)
+        gameState.Temp |> equal (Some -24)
         gameState.Players |> Map.map (fun k v -> v.TR)
                           |> equal (Map.ofArray [| 
-                                            (Yellow, 99); 
-                                            (Green, 100); 
-                                            (Red,   100); 
-                                            (Blue,  100); 
-                                            (Black, 100)
+                                            (Yellow, 21); 
+                                            (Green, 30); 
+                                            (Red,   22); 
+                                            (Blue,  0); 
+                                            (Black, 0)
                                            |])
-
-    [<Test>]
-    let ``What's under debug selector`` () = 
-        let scene = TTSJson.loadScene "../../../Examples/TerraformingMarsExample.json"
-        let marker = findbyID "db13d7" scene 
-        let snap = onSnapPoint marker  scene 
-        snap |> printfn "Snap Point %A"
-
-        //95-81

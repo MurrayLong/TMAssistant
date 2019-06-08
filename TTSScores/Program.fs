@@ -1,12 +1,17 @@
 ﻿// Learn more about F# at http://fsharp.org
 
 open System
-open TTSJson
 open Newtonsoft.Json
 open TerraformingMars
 open Table
 
 let prettyJson obj = JsonConvert.SerializeObject(obj, Formatting.Indented)
+
+let playerName = function
+  | Green -> "Murray"
+  | Red -> "Sam"
+  | Yellow -> "Ross"
+  | _-> "Not Playing"
 
 let formatIntOption = function
   | Some x -> sprintf "%i" x
@@ -14,21 +19,27 @@ let formatIntOption = function
 
 let formatResource (resource:Resource) (values:ResourceState) = 
   let name = resource.ToString()
-  sprintf "  %s:\t %i + %i" name values.stockpile values.income
+  sprintf "  %6s: %3i %+i" name values.stockpile values.income
 
 let formatPlayer (player:Player) (state:PlayerState) = 
   sprintf "%A
   TR: %i%s
-  " player state.TR (state.Resources |> Map.map (formatResource) |> Map.fold (fun a _ b -> a+"\r\n"+b) "")
+  " (playerName player) state.TR (state.Resources |> Map.map (formatResource) |> Map.fold (fun a _ b -> a+"\r\n"+b) "")
   
 
 let format (state:GameState)  = 
-    sprintf """Generation %s 
+    sprintf """ 
+WE ARE WAITING FOR: %s    
+Generation %s 
+Start Player: %s
 O2: %s%%
 Temp: %s c
 Oceans placed %i/9
 %s
-    """ (formatIntOption state.Generation) 
+    """ 
+        (playerName state.CurrentPlayer)
+        (formatIntOption state.Generation) 
+        (playerName state.StartPlayer)
         (formatIntOption state.O2) 
         (formatIntOption state.Temp) 
         state.Oceans
