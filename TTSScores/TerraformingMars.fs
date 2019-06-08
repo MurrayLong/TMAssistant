@@ -104,7 +104,11 @@ let CRIncome player scene =
     let snapPoints = (localSnapPoints board) >> selectIndexes [0;1;2;3;4;10;9;8;7;6;5;11;12;13;14;15]
     scoreTrack snapPoints (markersFor player) scale scene
 
-let steelIncomeIndexes = [16;17;18;19;20;21;26;25;24;23;22]
+let steelIncomeIndexes = [32;31;30;29;28;27; 33;34;35;36;37]
+let tiIncomeIndexes    = [38;39;40;41;42;43; 48;47;46;45;44]
+let plantIncomeIndexes = [47;20;19;18;17;16; 22;23;24;25;26]
+let powerIncomeIndexes = [70;68;69;63;62;61; 67;66;64;65;60]
+let heatIncomeIndexes  = [49;50;51;52;53;54; 59;58;57;56;55]
 
 let SteelIncome player scene =
     let board = playerBoard player >> Seq.head
@@ -113,22 +117,22 @@ let SteelIncome player scene =
 
 let TiIncome player scene =
     let board = playerBoard player >> Seq.head
-    let snapPoints = (localSnapPoints board) >> selectIndexes (steelIncomeIndexes |> List.map (fun v->v+11))
+    let snapPoints = (localSnapPoints board) >> selectIndexes tiIncomeIndexes
     scoreTrack snapPoints (markersFor player) id scene
 
 let PlantIncome player scene =
     let board = playerBoard player >> Seq.head
-    let snapPoints = (localSnapPoints board) >> selectIndexes (steelIncomeIndexes |> List.map (fun v->v+22))
+    let snapPoints = (localSnapPoints board) >> selectIndexes plantIncomeIndexes
     scoreTrack snapPoints (markersFor player) id scene
 
 let PowerIncome player scene =
     let board = playerBoard player >> Seq.head
-    let snapPoints = (localSnapPoints board) >> selectIndexes (steelIncomeIndexes |> List.map (fun v->v+33))
+    let snapPoints = (localSnapPoints board) >> selectIndexes powerIncomeIndexes
     scoreTrack snapPoints (markersFor player) id scene
 
 let HeatIncome player scene =
     let board = playerBoard player >> Seq.head
-    let snapPoints = (localSnapPoints board) >> selectIndexes (steelIncomeIndexes |> List.map (fun v->v+44))
+    let snapPoints = (localSnapPoints board) >> selectIndexes steelIncomeIndexes
     scoreTrack snapPoints (markersFor player) id scene
 
 let Generation = 

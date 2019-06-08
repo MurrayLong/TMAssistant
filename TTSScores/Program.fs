@@ -32,7 +32,7 @@ Oceans placed %i/9
         (formatIntOption state.O2) 
         (formatIntOption state.Temp) 
         state.Oceans
-        (state.Players |> Map.map (formatPlayer ) |> Map.fold (fun a _ b -> a+"\r\n\r\n"+b) "")
+        (state.Players |> Map.map (formatPlayer) |> Map.fold (fun a _ b -> a+"\r\n\r\n"+b) "")
 
 let snapPointIndexUnderID id scene = 
         let marker = Table.findbyID id scene 
@@ -50,21 +50,16 @@ let textYellowBoard (scene:Save) =
       yield board.Transform.Apply s
   }
 
-  let cube = findbyID "4d5291" scene
-  getSnapPointIndex translatedSnaps cube
+  let cube = findbyID "c44c66" scene
+  let snap = getSnapPointIndex translatedSnaps cube
+  printf "%A" snaps.[snap|>Option.defaultValue -1]
+  snap
 
 [<EntryPoint>]
 let main argv =
-(*
   let scene = stdin.ReadToEnd() |> TTSJson.load 
   textYellowBoard scene |> printfn "Snap Index: %A" |> ignore
-  let value = TerraformingMars.CRIncome Yellow scene
-  printfn "Yellow CR Income %i" value
-  0
-  *)
-    stdin.ReadToEnd()
-        |> TTSJson.load 
-        |> TerraformingMars.interpret
+  scene |> TerraformingMars.interpret
         |> format 
         |> Console.WriteLine 
-    0
+  0
