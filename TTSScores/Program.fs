@@ -14,7 +14,7 @@ let formatIntOption = function
 
 let formatResource (resource:Resource) (values:ResourceState) = 
   let name = resource.ToString()
-  sprintf "  %s: %i + %i" name values.stockpile values.income
+  sprintf "  %s:\t %i + %i" name values.stockpile values.income
 
 let formatPlayer (player:Player) (state:PlayerState) = 
   sprintf "%A
@@ -50,15 +50,24 @@ let textYellowBoard (scene:Save) =
       yield board.Transform.Apply s
   }
 
-  let cube = findbyID "c44c66" scene
+  let cube = findbyID "b341ac" scene
   let snap = getSnapPointIndex translatedSnaps cube
-  printf "%A" snaps.[snap|>Option.defaultValue -1]
+  printf "Index %A %A" snap snaps.[snap|>Option.defaultValue -1]
   snap
 
 [<EntryPoint>]
 let main argv =
+(*
+  let scene = TTSJson.loadScene """C:\Users\murray.long\Workspace\TTSScores\Examples\terraformingmarsExample.json"""
+  let board = findNick "Yellow Board" scene |> Seq.head
+  let debug = findNick "Debug" scene |> Seq.head
+  let boundry = stockPilesBounds |> Map.find MCr 
+  printfn  "%A" boundry
+  printfn "debug position on board: %A" (board.Transform.Reverse debug.Transform.Translation)
+  printfn "%A" <| WithinBoundry board boundry debug
+  0
+  *)
   let scene = stdin.ReadToEnd() |> TTSJson.load 
-  textYellowBoard scene |> printfn "Snap Index: %A" |> ignore
   scene |> TerraformingMars.interpret
         |> format 
         |> Console.WriteLine 

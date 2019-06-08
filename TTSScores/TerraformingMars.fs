@@ -33,7 +33,7 @@ with
         | MCr -> "MCr"
         | Steal -> "Steal"
         | Titanium -> "Ti"
-        | Plants -> "Plants"
+        | Plants -> "Plant"
         | Power -> "Power"
         | Heat -> "Heat"
 
@@ -47,10 +47,50 @@ with
         | Black -> "Black"
     static member All = [| Yellow ; Green ; Red ; Blue ; Black |]
 
+
 type ResourceState = {
   income: int;
   stockpile: int
 }
+
+type StockPileBoundry ={
+    TopLeft: float32*float32*float32;
+    BottomRight: float32*float32*float32;
+ }
+
+let stockPilesBounds = Map.ofList [
+  (MCr, {
+    TopLeft= (1.28126335f, 0.325000525f, -0.91987294f);
+    BottomRight = (0.210445493f, 0.325000525f, -0.346702665f);
+  });
+  (Steal, {
+    TopLeft = (0.174996525f, 0.325000525f, -0.914289296f);
+    BottomRight =(-0.533730447f, 0.325000525f, -0.346435606f)
+  });
+  (Titanium, {
+    TopLeft = (-0.57846868f, 0.325000525f, -0.911780357f);
+    BottomRight = (-1.28582084f, 0.325000525f, -0.34839645f)
+  });
+  (Heat, {
+    TopLeft = (-0.441874564f, 0.325000525f, 0.419090182f);
+    BottomRight = (-1.31089461f, 0.325000525f, 0.921986401f)
+  });
+  (Power, {
+    TopLeft =  (0.359622389f, 0.325000525f, 0.412322611f);
+    BottomRight= (-0.389986277f, 0.325000525f, 0.918745995f)
+  })
+  (Plants, {
+    TopLeft= (1.28476608f, 0.325000525f, 0.406576335f);
+    BottomRight = (0.393995911f, 0.325000525f, 0.927631259f)
+  });
+  ]
+
+let WithinBoundry (board:GameObject) (boundry:StockPileBoundry) (obj:GameObject) = 
+  let (x,y,z) = board.Transform.Reverse obj.Transform.Translation
+  let (left,_,top) = boundry.TopLeft
+  let (right,_,bottom) = boundry.BottomRight
+  x<left && x>right && z > top && z<bottom
+
 
 type PlayerState = {
   TR: int ;
@@ -65,7 +105,6 @@ type GameState = {
         Oceans: int;
         Players: Map<Player, PlayerState>
         } 
-
 
 let objectsNamed name scene = scene.ObjectStates |> Array.filter (fun g->g.Nickname=name)
 let objectWithID id scene = scene.ObjectStates |> Seq.filter (fun g->g.GUID=id)
@@ -92,11 +131,11 @@ let selectIndexes indexes l =
   }
 
 let playerBoard = function
-    | Yellow -> objectWithID "414e30" 
+    | Yellow -> objectWithID "efa425" //"414e30" 
     | Red ->    objectWithID "b1cfa0" 
     | Black ->  objectWithID "583d53" 
     | Blue ->   objectWithID "75192e" 
-    | Green ->  objectWithID "31b4c1" 
+    | Green ->  objectWithID "31dd6a" 
 
 let CRIncome player scene = 
     let scale x = x-5
@@ -132,7 +171,7 @@ let PowerIncome player scene =
 
 let HeatIncome player scene =
     let board = playerBoard player >> Seq.head
-    let snapPoints = (localSnapPoints board) >> selectIndexes steelIncomeIndexes
+    let snapPoints = (localSnapPoints board) >> selectIndexes heatIncomeIndexes
     scoreTrack snapPoints (markersFor player) id scene
 
 let Generation = 
@@ -162,16 +201,32 @@ let oceans scene =
          |> Option.defaultValue 0
   9-remaining
 
+let cubeValue (cube:GameObject) = 
+  match cube.Nickname with
+    | "1" -> 1
+    | "5" -> 5
+    | "10" -> 10
+    | _ ->0
+
+let stocksOf resource player scene = 
+  let board = playerBoard player scene |> Seq.head
+  let boundry = stockPilesBounds 
+                  |> Map.tryFind resource 
+                  |> Option.defaultValue {TopLeft= (0.0f,0.0f,0.0f); BottomRight=(0.0f,0.0f,0.0f)}
+  scene.ObjectStates 
+    |> Array.filter (WithinBoundry board boundry) 
+    |> Seq.sumBy cubeValue 
+
 let playerState player scene = 
   {
       TR = TRMarker player scene |> Option.defaultValue 0
       Resources = [ 
-                (MCr, { income= CRIncome player scene;  stockpile=0});
-                (Steal, { income= SteelIncome player scene;  stockpile=0});
-                (Titanium, { income= TiIncome player scene;  stockpile=0});
-                (Plants, { income= PlantIncome player scene;  stockpile=0});
-                (Power, { income= PowerIncome player scene;  stockpile=0});
-                (Heat, { income= HeatIncome player scene;  stockpile=0});
+                (MCr, { income= CRIncome player scene;  stockpile=stocksOf MCr player scene });
+                (Steal, { income= SteelIncome player scene;  stockpile=stocksOf Steal player scene});
+                (Titanium, { income= TiIncome player scene;  stockpile=stocksOf Titanium player scene});
+                (Plants, { income= PlantIncome player scene;  stockpile=stocksOf Plants player scene});
+                (Power, { income= PowerIncome player scene;  stockpile=stocksOf Power player scene});
+                (Heat, { income= HeatIncome player scene;  stockpile=stocksOf Heat player scene});
           ] |> Map.ofSeq
     }
 
