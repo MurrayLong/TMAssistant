@@ -19,10 +19,13 @@
     <Compile Include="TTSJson.fs" />
     <Compile Include="Result.fs" />
     <Compile Include="TerraformingMars.fs" />
+    <Compile Include="Output/HumanReadable.fs" />
+    <Compile Include="Output/Json.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Argu" Version="5.4.0" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
   </ItemGroup>
 
