@@ -106,6 +106,7 @@ type GameState = {
         O2: int option; 
         Temp: int option;
         Oceans: int;
+        TurnSequence: Player list;
         Players: Map<Player, PlayerState>
         } 
 
@@ -261,6 +262,7 @@ let interpret (scene:Save) =
         O2 = O2Level scene;
         Temp = TempLevel scene;
         Oceans = oceans scene;
+        TurnSequence = Player.All;
         Players = Player.All 
                   |> List.map (fun p -> p, playerState  p scene) 
                   |> Map.ofList

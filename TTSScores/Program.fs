@@ -4,7 +4,7 @@ open Argu
 open Output
 
 type OutputFormat =  
-  HumanReadable | Json
+  HumanReadable | Json | KeyValue
 
 type CLIArguments =
     | Output of OutputFormat 
@@ -17,6 +17,7 @@ with
 let format = function 
   | Json          -> Output.Json.prettyJson
   | HumanReadable -> Output.HumanReadable.format
+  | KeyValue      -> Output.KeyValuePairs.format
 
 [<EntryPoint>]
 let main argv =

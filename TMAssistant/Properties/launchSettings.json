@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "TMAssistant": {
+      "commandName": "Project",
+      "commandLineArgs": "generation"
+    }
+  }
+}
