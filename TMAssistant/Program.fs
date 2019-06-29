@@ -40,14 +40,31 @@ let describeDiff d =
     let lines =  Seq.map (fun (value,expected,actual)-> sprintf "%s: %s -> %s" value expected actual) d
     String.Join ("\r\n", lines)
 
+let tryReadFile file = 
+  try
+    Option.Some (File.ReadAllText(file))
+  with e-> None
+
+let readLockedFile file = 
+  seq { for attempt in [1;2;3] do
+          printfn "Attempt %i" attempt
+          match (tryReadFile file) with
+            | None -> Threading.Thread.Sleep(attempt*1000)
+            | Some x-> yield x
+      } |> Seq.head
+
 let watchFile path callback = 
-    let watcher = new System.IO.FileSystemWatcher(path);
+    let fileInfo = new FileInfo(path)
+    let directoryPart = fileInfo.Directory.FullName
+    let filePart = fileInfo.Name
+    printfn "%s" filePart
+    let watcher = new System.IO.FileSystemWatcher(directoryPart);
     watcher.EnableRaisingEvents <-true
-    watcher.Changed.Add(fun _->callback())
+    watcher.Changed.Add(fun e->if (e.Name=filePart) then callback() else ())
     ()
 
 let onFileUpdate expectedState file = 
-    let currentState = File.ReadAllText(file) 
+    let currentState =  readLockedFile file
                         |> TTSJson.load 
                         |> TerraformingMars.interpret
     let remainingChanges = diff currentState expectedState  |> List.ofSeq
@@ -86,7 +103,7 @@ let main argv =
             run config subCommand.Value 
         else
             printf "Invalid command \r\n%s" (parser.PrintUsage())
-
     with e ->
         printfn "%s" e.Message
+    Console.ReadLine()
     0
