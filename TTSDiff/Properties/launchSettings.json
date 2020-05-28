@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "TTSDiff": {
+      "commandName": "Project",
+      "commandLineArgs": "\"C:\\Users\\murray\\Documents\\my games\\Tabletop Simulator\\Saves\\TMDif\\TMStart.json\""
+    }
+  }
+}
