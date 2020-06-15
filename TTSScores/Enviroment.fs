@@ -1,6 +1,10 @@
 ﻿module Enviroment
 
-#if DOTNET
+#if FABLE
+    let inline ofJson<'T> json = Fable.Core.JsInterop.ofJson<'T> json
+    let readFileSync (encoding:string) (fileName:string)= Fable.Import.Node.fs.readFileSync(fileName,encoding)
+    let readFile = readFileSync (string "utf8")
+#else
 open System
 open Microsoft.FSharp.Reflection
 open Newtonsoft.Json
@@ -32,14 +36,6 @@ open Newtonsoft.Json.Converters
 
 
     let ofJson<'T> json = Newtonsoft.Json.JsonConvert.DeserializeObject<'T>(json, new OptionConverter())
-#else
-    let inline ofJson<'T> json = Fable.Core.JsInterop.ofJson<'T> json
-#endif
-
-#if DOTNET
     let readFile fileName= System.IO.Path.Combine ("../", fileName )
                             |> System.IO.File.ReadAllText
-#else
-    let readFileSync (encoding:string) (fileName:string)= Fable.Import.Node.fs.readFileSync(fileName,encoding)
-    let readFile = readFileSync (string "utf8")
 #endif

@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -19,6 +19,7 @@
     <Compile Include="TTSJson.fs" />
     <Compile Include="Result.fs" />
     <Compile Include="TerraformingMars.fs" />
+    <Compile Include="Output\ScoreBot.fs" />
     <Compile Include="Output/HumanReadable.fs" />
     <Compile Include="Output/Json.fs" />
     <Compile Include="Program.fs" />

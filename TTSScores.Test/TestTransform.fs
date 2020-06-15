@@ -3,18 +3,18 @@ open Transform
 open Table
 open Enviroment
 
-#if DOTNET
-open NUnit.Framework
-#else
+#if FABLE
 open Fable.Core.Testing
+#else
+open NUnit.Framework
 #endif
 
 [<TestFixture>]
 module TestTransform =
-    #if DOTNET
-    #else
+    #if FABLE
     // This must be before everything else
     Fable.Import.Node.require.Invoke("babel-polyfill") |> ignore
+    #else
     #endif
 
 

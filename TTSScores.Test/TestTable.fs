@@ -3,10 +3,10 @@ open Transform
 open Table
 open Enviroment
 
-#if DOTNET
-open NUnit.Framework
-#else
+#if FABLE
 open Fable.Core.Testing
+#else
+open NUnit.Framework
 #endif
 
 [<TestFixture>]

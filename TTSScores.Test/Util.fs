@@ -2,15 +2,12 @@ namespace Test
 
 [<AutoOpen>]
 module Util =
-    #if DOTNET
-    #else
+    #if FABLE
     // This must be before everything else
     Fable.Import.Node.require.Invoke("babel-polyfill") |> ignore
-    #endif
-    #if DOTNET
-    open NUnit.Framework
-    #else
     open Fable.Core.Testing
+    #else
+    open NUnit.Framework
     #endif
 
     // Convenience method
